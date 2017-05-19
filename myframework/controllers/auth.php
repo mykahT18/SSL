@@ -6,9 +6,10 @@ class auth extends AppController{
 
 	function login(){
 		if($_REQUEST["username"] && $_REQUEST["password"]){
+			$data = $this->parent->getModel("user")->select("select * from users where email = :email and password = : password", array(":email"=>$_REQUEST["username"],":password"=>sha1($_REQUEST["password"]))
             $users = file('data.txt');
 
-            $successmonkey = 0;
+            $success = 0;
    			foreach($users as $user){
    				$user = explode("|", $user);
 				if($_REQUEST["username"] == $user[0] && $_REQUEST["password"] == $user[1]){

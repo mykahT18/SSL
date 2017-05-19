@@ -23,6 +23,7 @@ class profile extends AppController{
 			"api"=>"/welcome/getApi", 
 			"contact"=>"/welcome/getContact",
 			"components"=>"/components",
+			"About"=>"/about",
 			"login"=> "/welcome/getLogin"
 			);
 		$this->getView("navigation", $menu, $page);
