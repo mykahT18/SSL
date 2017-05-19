@@ -1,5 +1,5 @@
 <?
-class users{
+class user{
 	public function __construct($parent){
 
 		$this->db = $parent->db;
@@ -9,7 +9,7 @@ class users{
 	function select($sql, $value=array()){
 
 		$this->sql = $this->db->prepare($sql);
-		$result = $this->sql-execute($value);
+		$result = $this->sql->execute($value);
 		$data = $this->sql->fetchAll();
 		return $data;
 	}

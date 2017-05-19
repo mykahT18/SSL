@@ -11,10 +11,9 @@
 		</form>
 
 		<div class="header">
-			<h1><?echo $_SESSION['user']['username']?></h1>
+			<h1>Mykah</h1>
 			<h4>Web Developer</h4>
-			<p></p>
-			<span><?echo $_SESSION['user']['userInfo']?></span>
+			<span>Hi I am a student at Full Sail.</span>
 		</div>		
 	</div>
 </div>
