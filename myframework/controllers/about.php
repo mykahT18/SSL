@@ -18,7 +18,7 @@ class about extends AppController{
 	function GenerateNav($page="welcome"){
 		$menu = array(
 			"home"=>"/", 
-			"api"=>"/welcome/getApi", 
+			"api"=>"/api", 
 			"contact"=>"/welcome/getContact",
 			"components"=>"/components",
 			"About"=>"/about",

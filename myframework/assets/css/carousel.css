@@ -16,12 +16,21 @@ img{
 h2{
   margin-top: 14rem;
 }
+.cus-btn{
+  margin-top: 1rem;
+}
+.cus-input-form{
+  width: 50%;
+}
 .carousel {
   position: relative;
   margin-top: 110px;
   margin-bottom: 100px;
 }
-
+.cus-form{
+  margin-top: 19rem;
+  margin-left: 14rem;
+}
 .carousel-inner {
   position: relative;
   width: 100%;

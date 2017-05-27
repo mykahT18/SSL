@@ -225,13 +225,42 @@
     <!-- Bootstrap CDN -->
     <!--     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script> -->
 
-      <script type="text/javascript">
+    <script type="text/javascript">
+    console.log("HELLO WORLD");
         $(document).ready(function(){
-            // $(".start-slide").click(function(){
-            //     $(".carousel").carousel('cycle');
-            // });
             $('#pop').popover();
+
+            var resultContainer = document.getElementById('results');
+
+            //-----Adding event listener on button---//
+            $("#sub").click(function(e) {
+                let val = $('#input').val().replace(/ /g,'')
+                // resultContainer.empty();
+                e.preventDefault();
+                $.ajax({
+                    url: "/api/Ajax/",
+                    data: { 
+                    "query": val
+                },
+                success: function(result) {
+                    var response = JSON.parse(result)
+                    console.log(response);
+                    var items = "";
+                    for(i = 0; i < response.items.length; i++){
+                        items += '<h1>Title: ' + response.items[i].volumeInfo.title + '</h1>';
+                        items += '<P>Title: ' + response.items[i].volumeInfo.authors + '</P>';
+                    };
+
+                    
+                    resultContainer.insertAdjacentHTML('beforeend', items);
+                },
+                error: function(result) {
+                    alert('error');
+                }
+                });
+            });
         })
+        
     </script>
 
     </body>

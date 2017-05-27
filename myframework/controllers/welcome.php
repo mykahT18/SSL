@@ -13,7 +13,7 @@ class welcome extends AppController{
 	function GenerateNav($page= "welcome"){
 		$menu = array(
 			"home"=>"/", 
-			"api"=>"/welcome/getApi", 
+			"api"=>"/api", 
 			"contact"=>"/welcome/getContact",
 			"components"=>"/components",
 			"About"=>"/about",
@@ -27,12 +27,6 @@ class welcome extends AppController{
 		$random = substr( md5(rand()), 0, 7);
 		$_SESSION['captcha']= $random;
 		$this->getView("contact",array("cap"=>$random, "style"=> '<link rel="stylesheet" href="../assets/css/carousel.css">'));
-		$this->getView("footer");
-	}
-	function getApi(){
-		$this->getView("header");
-		$this->GenerateNav("api");
-		$this->getView("api", array("style"=> '<link rel="stylesheet" href="../assets/css/carousel.css">'));
 		$this->getView("footer");
 	}
 	function getLogin(){
